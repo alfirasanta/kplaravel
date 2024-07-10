@@ -33,6 +33,9 @@
                         <a class="nav-link" href="{{ url('/laporanpelanggan') }}">Laporan</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="{{ url('/statuslaporan') }}">Status</a>
+                    </li>
+                    <li class="nav-item">
                         <a href="{{ url('/loginpelanggan') }}" class="nav-link"><i
                                 class="bi bi-person-circle"></i></i></a>
                     </li>
