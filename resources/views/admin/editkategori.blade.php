@@ -58,14 +58,14 @@
             </li>
 
             <hr class="sidebar-divider my-0">
-            <li class="nav-item active">
+            <li class="nav-item">
                 <a class="nav-link collapsed" href="{{ url('/laporanadmin') }}">
                     <span>Laporan</span>
                 </a>
             </li>
 
             <hr class="sidebar-divider my-0">
-            <li class="nav-item">
+            <li class="nav-item active">
                 <a class="nav-link collapsed" href="{{ url('/listpelanggan') }}">
                     <span>Pelanggan</span>
                 </a>
@@ -110,51 +110,29 @@
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Daftar Laporan</h1>
+                        <h1 class="h3 mb-0 text-gray-800">Edit Kategori</h1>
 
                     </div>
-                    <div class="container-fluid py-3">
-                        <div class="container">
-                            <div class="col-12">
-                                <table class="table" style="background-color:white">
-                                    <thead style="background-color: #3498db">
-                                        <tr style="color:white">
-                                            <th scope="col">No. </th>
-                                            <th scope="col">Nama</th>
-                                            <th scope="col">Alamat</th>
-                                            <th scope="col">No. Telp</th>
-                                            <th scope="col">No. Pelanggan</th>
-                                            <th scope="col">Detail</th>
-                                            <th scope="col">Status</th>
-                                            <th scope="col">Aksi</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        @php $no = 1; @endphp
-                                        @foreach ($listlaporan as $listlaporan)
-                                            <tr>
 
-                                                <th scope="row">{{ $no++ }}</th>
-                                                <td>{{ $listlaporan->nama }}</td>
-                                                <td>{{ $listlaporan->alamat }}</td>
-                                                <td>{{ $listlaporan->no_telp }}</td>
-                                                <td>{{ $listlaporan->no_pel }}</td>
-                                                <td>{{ $listlaporan->detail }}</td>
-                                                <td>{{ $listlaporan->status }}</td>
-                                                <td>
-                                                    <button type="button" class="btn btn-primary">Jawab</button>
-                                                </td>
-                                            </tr>
-                                        @endforeach
-                                    </tbody>
-                                </table>
+                    {{-- @method('put') --}}
+                    @foreach ($ekategori as $ekategori)
+                        <form action="{{ route('updatekategori') }}" method="POST">
+                            @csrf
+                            {{-- @method('PUT') --}}
+                            <div class="mb-3">
+                                <input type="hidden" name="id" value="{{ $ekategori->id }}">
+                                <label for="kode" class="form-label">Kode</label>
+                                <input type="text" class="form-control" id="kode" name='kode'
+                                    value="{{ $ekategori->kode }}">
                             </div>
-                        </div>
-                    </div>
-
-
-
-
+                            <div class="mb-3">
+                                <label for="nama_kategori" class="form-label">Nama Kategori</label>
+                                <input type="text" class="form-control" id="nama_kategori" name='nama_kategori'
+                                    value=" {{ $ekategori->nama_kategori }} ">
+                            </div>
+                    @endforeach
+                    <button type="submit" class="btn btn-primary">Simpan</button>
+                    </form>
 </body>
 
 </html>

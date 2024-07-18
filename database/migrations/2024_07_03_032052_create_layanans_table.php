@@ -20,7 +20,7 @@ return new class extends Migration
         });
 
         Schema::table('layanans', function (Blueprint $table) {
-            $table->foreign('kategoris_id')->references('id')->on('kategoris');
+            $table->foreign('kategoris_id')->references('id')->on('kategoris')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

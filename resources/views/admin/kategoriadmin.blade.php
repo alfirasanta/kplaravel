@@ -137,10 +137,13 @@
                                                 <td>{{ $listkategori->kode }}</td>
                                                 <td>{{ $listkategori->nama_kategori }}</td>
                                                 <td>
+                                                    <form>
+                                                        <a class="btn btn-sm btn-success"
+                                                            href="{{ route('editkategori', $listkategori->id) }}">Update</a>
+                                                    </form>
                                                     <form onsubmit="return confirm('Apakah Anda Yakin ?');"
                                                         action="{{ route('hapuskategori', $listkategori->id) }}"
                                                         method="POST">
-                                                        <a href="" class="btn btn-sm btn-primary">Update</a>
                                                         @csrf
                                                         @method('DELETE')
                                                         <button type="submit"

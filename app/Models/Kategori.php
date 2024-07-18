@@ -15,6 +15,6 @@ class Kategori extends Model
 
     public function layanan()
     {
-        return $this->belongsTo(Layanan::class);
+        return $this->hasMany(Layanan::class);
     }
 }

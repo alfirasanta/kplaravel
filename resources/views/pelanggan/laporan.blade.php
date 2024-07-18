@@ -64,31 +64,28 @@
 
                 <div class="row justify-content-center">
                     <div class="col-lg-10">
-                        <form action="{{ route('laporan.store') }}" method="POST" class="php-email-form"
-                            enctype="multipart/form-data">
+                        <form action="{{ route('simpanlaporan') }}" method="POST" enctype="multipart/form-data">
                             @csrf
-                            {{-- <div class="row">
-                                <div class="col-md-6 form-group">
-                                    <input type="text" name="name" class="form-control" id="name"
-                                        placeholder="Your Name" required>
-                                </div>
-                                <div class="col-md-6 form-group mt-3 mt-md-0">
-                                    <input type="email" class="form-control" name="email" id="email"
-                                        placeholder="Your Email" required>
-                                </div>
-                            </div> --}}
+                            <div class="form-group mt-3">
+                                <input type="text" class="form-control" name="no_pel" id="no_pel"
+                                    placeholder="Nomor Pelanggan" required>
+                            </div>
+
                             <div class="form-group mt-3">
                                 <input type="text" class="form-control" name="nama" id="nama"
-                                    placeholder="Your Name" required>
+                                    placeholder="Nama" required>
                             </div>
 
                             <div class="form-group mt-3">
                                 <input type="text" class="form-control" name="alamat" id="alamat"
-                                    placeholder="Address" required>
+                                    placeholder="Alamat" required>
                             </div>
                             <div class="form-group mt-3">
                                 <input type="text" class="form-control" name="no_telp" id="no_telp"
-                                    placeholder="Phone" required>
+                                    placeholder="No. Telp" required>
+                            </div>
+                            <div class="form-group mt-3">
+                                <textarea class="form-control" name="detail" id ="detail" rows="5" placeholder="Detail" required></textarea>
                             </div>
                             <div class="form-group mt-3">
                                 <textarea class="form-control" name="detail" id ="detail" rows="5" placeholder="Detail" required></textarea>

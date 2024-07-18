@@ -137,8 +137,19 @@
                                                 <td>{{ $listlayanan->nama_layanan }}</td>
                                                 <td>{{ $listlayanan->detail }}</td>
                                                 <td>{{ $listlayanan->nama_kategori }}</td>
-                                                <td><button type="button" class="btn btn-danger"></i>Hapus</button>
-                                                    <button type="button" class="btn btn-primary">Update</button>
+                                                <td>
+                                                    <form>
+                                                        <a class="btn btn-sm btn-success"
+                                                            href="{{ route('editlayanan', $listlayanan->id) }}">Update</a>
+                                                    </form>
+                                                    <form onsubmit="return confirm('Apakah Anda Yakin ?');"
+                                                        action="{{ route('hapuslayanan', $listlayanan->id) }}"
+                                                        method="POST">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <button type="submit"
+                                                            class="btn btn-sm btn-danger">Hapus</button>
+                                                    </form>
                                                 </td>
                                             </tr>
                                         @endforeach

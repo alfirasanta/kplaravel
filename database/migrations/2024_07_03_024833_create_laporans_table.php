@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('laporans', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('no_pel')->unsigned();
             $table->string('detail');
             $table->unsignedBigInteger('pelanggans_id')->unsigned();
             $table->unsignedBigInteger('status_id')->unsigned();

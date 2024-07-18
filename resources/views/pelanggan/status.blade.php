@@ -62,76 +62,33 @@
                         <thead>
                             <tr>
                                 <th scope="col">No. </th>
+                                <th scope="col">No. Pelanggan </th>
                                 <th scope="col">Nama </th>
                                 <th scope="col">Alamat </th>
-                                <th scope="col">Telepon </th>
+                                <th scope="col">No. Telp </th>
                                 <th scope="col">Detail </th>
                                 <th scope="col">Status </th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                                <td>Otto</td>
-                                <td>Otto</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>@fat</td>
-                                <td>Otto</td>
-                                <td>Otto</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td>Larry</td>
-                                <td>the Bird</td>
-                                <td>@twitter</td>
-                                <td>Otto</td>
-                                <td>Otto</td>
-                            </tr>
+                            @php $no = 1; @endphp
+                            @foreach ($daftarlaporan as $daftarlaporan)
+                                <tr>
+                                    <th scope="row">{{ $no++ }}</th>
+                                    <td>{{ $daftarlaporan->no_pel }}</td>
+                                    <td>{{ $daftarlaporan->nama }}</td>
+                                    <td>{{ $daftarlaporan->alamat }}</td>
+                                    <td>{{ $daftarlaporan->no_telp }}</td>
+                                    <td>{{ $daftarlaporan->detail }}</td>
+                                    <td>{{ $daftarlaporan->status }}</td>
+                                </tr>
+                            @endforeach
                         </tbody>
                     </table>
-                    {{-- <div class="row g-0">
-                        <div class="col-3">
-                            <div class="list-group">
-                                <button type="button" class="list-group-item list-group-item-action active"
-                                    aria-current="true">
-                                    DAFTAR KATEGORI
-                                </button>
-                                @foreach ($kategori as $kategori)
-                                    <button type="button"
-                                        class="list-group-item list-group-item-action">{{ $kategori->nama_kategori }}</button>
-                                @endforeach
-                            </div>
-                        </div>
-                        <div class="row col-9 g-0">
-                            @foreach ($daftarlayanan as $daftarlayanan)
-                                <div class="card" style="width: 15rem; margin-left:10px; margin-bottom: 10px">
-                                    <img src="{{ asset('img/cover1.jpg') }}" class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                        <h5 class="card-title">{{ $daftarlayanan->nama_layanan }}</h5>
-                                        <p class="card-text">{{ $daftarlayanan->detail }}</p>
 
-                                    </div>
-                                </div>
-                            @endforeach
-                        </div>
-                    </div> --}}
                 </div>
             </div>
         </div>
-        {{-- <ul class="list-group">
-            <li class="list-group-item">An item</li>
-            <li class="list-group-item">A second item</li>
-            <li class="list-group-item">A third item</li>
-            <li class="list-group-item">A fourth item</li>
-            <li class="list-group-item">And a fifth one</li>
-        </ul> --}}
         <!-- footer starts -->
         <footer class="bg-dark p-2 text-center mt-md-5">
             <div class="container">

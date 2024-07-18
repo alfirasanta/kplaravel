@@ -16,6 +16,7 @@ class LaporanSeeder extends Seeder
     {
         DB::table('laporans')->insert([
             [
+                'no_pel' => 123992922,
                 'detail' => 'jaringan lemot',
                 'pelanggans_id' => 1,
                 'status_id' => 1

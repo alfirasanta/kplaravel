@@ -12,8 +12,22 @@ class Layanan extends Model
     protected $primaryKey = 'id';
     protected $fillable = ['nama_layanan', 'detail', 'kategoris_id'];
 
+    // public function kategori()
+    // {
+    //     return $this->belongsTo(Kategori::class);
+    // }
+
     public function kategori()
     {
-        return $this->hasMany(Kategori::class);
+        return $this->belongsTo(Kategori::class);
+    }
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::deleting(function ($layanan) {
+            $layanan->kategori()->delete();
+        });
     }
 }
